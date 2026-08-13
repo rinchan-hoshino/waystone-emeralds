@@ -1,8 +1,8 @@
 package dev.rinchan.waystoneemeralds.neoforge;
 
 import dev.rinchan.waystoneemeralds.WaystoneEmeralds;
-import dev.rinchan.waystoneemeralds.client.EmeraldCurrencyRequirementRenderer;
-import dev.rinchan.waystoneemeralds.requirement.EmeraldCurrencyRequirement;
+import dev.rinchan.waystoneemeralds.client.EmeraldCompatibleItemRequirementRenderer;
+import dev.rinchan.waystoneemeralds.requirement.EmeraldCompatibleItemRequirement;
 import net.blay09.mods.waystones.client.requirement.RequirementClientRegistry;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
@@ -16,6 +16,9 @@ public final class WaystoneEmeraldsNeoForgeClient {
 
     @SubscribeEvent
     public static void onClientSetup(FMLClientSetupEvent event) {
-        event.enqueueWork(() -> RequirementClientRegistry.registerRenderer(EmeraldCurrencyRequirement.class, new EmeraldCurrencyRequirementRenderer()));
+        event.enqueueWork(() -> RequirementClientRegistry.registerRenderer(
+            EmeraldCompatibleItemRequirement.class,
+            new EmeraldCompatibleItemRequirementRenderer()
+        ));
     }
 }

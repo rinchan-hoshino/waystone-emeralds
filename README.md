@@ -1,29 +1,16 @@
 # Paid Waystones
 
-Paid Waystones charges vanilla emeralds for Waystones teleports.
+Paid Waystones lets Waystones' native emerald item costs be paid with vanilla emeralds or emerald blocks.
 
-Configure teleport costs in `config/waystone_emeralds-common.toml`.
+Waystones remains the sole owner of pricing. Configure costs with the native `teleports.warpRequirements` list in `config/waystones-common.toml`, using functions such as `add_item_cost`, `scaled_add_item_cost`, `min_item_cost`, and `max_item_cost`.
 
-## Config
+When a native Waystones item requirement charges `minecraft:emerald`:
 
-Default `config/waystone_emeralds-common.toml`:
+- One emerald block counts as nine emeralds.
+- Change is returned as emeralds.
+- Teleport rollback refunds the consumed emerald value.
 
-```toml
-[teleports]
-enableEmeraldCosts = true
-sameDimensionCost = 1
-interdimensionalCost = 3
-scrollCostMultiplier = 0.0
-minCost = 0
-maxCost = 3
-```
-
-The default config mirrors a simple fixed Waystones XP setup, but charges emerald units instead:
-
-- Same-dimension warp: 1 emerald.
-- Interdimensional warp: 3 emeralds.
-- Scrolls: no extra emerald cost.
-- Emerald blocks count as 9 emeralds and return change as emeralds.
+Other Waystones item requirements retain their native behavior. Native item, experience-point, experience-level, and cooldown requirements can be configured together and are all enforced during the same teleport.
 
 ## Requirements
 
