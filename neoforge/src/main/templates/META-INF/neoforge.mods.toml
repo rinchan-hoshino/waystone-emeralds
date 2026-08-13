@@ -38,10 +38,3 @@ type="required"
 versionRange="[21.0.39,)"
 ordering="AFTER"
 side="BOTH"
-
-[[dependencies.${mod_id}]]
-modId="lightmanscurrency"
-type="optional"
-versionRange="[0,)"
-ordering="AFTER"
-side="BOTH"

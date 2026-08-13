@@ -16,7 +16,7 @@ public final class WaystoneEmeraldsConfig {
         ModConfigSpec.Builder builder = new ModConfigSpec.Builder();
         builder.push("teleports");
         ENABLE_EMERALD_COSTS = builder
-            .comment("When true, Waystone Emeralds replaces Waystones' warp requirement list at runtime with the emerald-cost rules below. Set false to leave Waystones' own config untouched.")
+            .comment("When true, Paid Waystones replaces Waystones' warp requirement list at runtime with the emerald-cost rules below. Set false to leave Waystones' own config untouched.")
             .define("enableEmeraldCosts", true);
         SAME_DIMENSION_COST = builder
             .comment("Emerald units charged for a same-dimension Waystones teleport.")
